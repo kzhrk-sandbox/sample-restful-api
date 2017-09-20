@@ -10,19 +10,19 @@ $ npm start
 ## Create user data
 
 ```
-$ curl -X POST -d "name=hoge" http://localhost:3000/user
+$ curl -X POST -d "name=hoge" http://localhost:3000/users
 ```
 
 ## Delete user data
 
 ```
-$ curl -X DELETE -d "name=hoge" http://localhost:3000/user
+$ curl -X DELETE -d "name=hoge" http://localhost:3000/users
 ```
 
 ## Update user data
 
 ```
-$ curl -X PUT -d "name=fuga" http://localhost:3000/user/hoge
+$ curl -X PUT -d "name=fuga" http://localhost:3000/users/hoge
 ```
 
 # LICENSE

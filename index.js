@@ -21,14 +21,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app
-	.get('/user', (req, res)=>{
+	.get('/users', (req, res)=>{
 		User
 			.find()
 			.exec((err, users)=>{
 				res.json(users);
 			});
 	})
-	.post('/user', (req, res)=>{
+	.post('/users', (req, res)=>{
 		let user = new User();
 
 		user.name = req.body.name;
@@ -43,7 +43,7 @@ app
 			})
 		});
 	})
-	.delete('/user', (req, res)=>{
+	.delete('/users', (req, res)=>{
 		User.findOneAndRemove({name: req.body.name}, (err)=>{
 			if (err) res.send(err);
 
@@ -52,7 +52,7 @@ app
 			});
 		});
 	})
-	.put('/user/:name', (req, res)=>{
+	.put('/users/:name', (req, res)=>{
 		User.findOne({name: req.params.name}, (err, user)=>{
 			user.name = req.body.name;
 			user.save((err)=>{
